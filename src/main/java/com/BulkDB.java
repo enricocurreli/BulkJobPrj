@@ -19,7 +19,8 @@ public class BulkDB {
             System.out.println(" 3. List products");
             System.out.println(" 4. Send data to database");
             System.out.println(" 5. Fetch data from database");
-            System.out.println(" 6. Quit");
+            System.out.println(" 6. Export data to database into .txt file");
+            System.out.println(" 7. Quit");
             String opt = sc.nextLine();
 
             switch (opt) {
@@ -89,10 +90,14 @@ public class BulkDB {
                     }
                     break;
                 case "6":
+                    ProductDAO dao = new ProductDAO();
+                    dao.exportAllProducts();
+                    break;
+
+                case "7":
                     start = false;
                     System.out.println("Bye");
                     break;
-
                 default:
                     System.out.println("Invalid option.");
                     break;

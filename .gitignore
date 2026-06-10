@@ -4,6 +4,8 @@ target/
 !**/src/test/**/target/
 .kotlin
 src/main/resources/db.properties
+src/main/resources/.env
+src/main/report/*
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
