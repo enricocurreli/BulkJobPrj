@@ -12,6 +12,7 @@ The application provides a simple command-line menu that allows users to create,
 - Persist multiple products to a relational database using JDBC batch execution.
 - Retrieve and display all products stored in the database.
 - Update existing product prices using database upsert logic.
+- Write and read files.
 
 ## Architecture
 The project follows a simple layered structure:
@@ -67,8 +68,9 @@ After starting the program, the console menu provides the following options:
 3. List products
 4. Persist data to database
 5. Retrieve data from database
-6. Export database data to a `.txt` file
-7. Quit
+6. Export database data to a `.txt` file 
+7. Read text file
+8. Quit
 
 A typical usage flow is:
 - add one or more products;
@@ -76,6 +78,7 @@ A typical usage flow is:
 - persist them to the database in batch mode;
 - retrieve all saved products to verify persistence;
 - export stored products to a text file for logging purposes.
+- read data from text file.
 
 ## Learning value
 This project is useful for practicing:
@@ -84,8 +87,7 @@ This project is useful for practicing:
 - the DAO pattern
 - JDBC connection handling (including best practices like try-with-resources)
 - batch inserts and upsert logic
-- basic transaction handling (commit/rollback concepts)
-- file handling using classes like `BufferedWriter`
+- file handling using classes like `BufferedWriter` and `BufferedReader`
 - separation between UI, model, and persistence layers
 
 ## Possible improvements

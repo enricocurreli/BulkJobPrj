@@ -13,6 +13,7 @@ public class BulkDB {
         Scanner sc = new Scanner(System.in);
 
         while (start) {
+
             System.out.println(" \nWelcome - Menu\n ");
             System.out.println(" 1. Add product");
             System.out.println(" 2. Remove product");
@@ -20,7 +21,8 @@ public class BulkDB {
             System.out.println(" 4. Send data to database");
             System.out.println(" 5. Fetch data from database");
             System.out.println(" 6. Export data to database into .txt file");
-            System.out.println(" 7. Quit");
+            System.out.println(" 7. Read text file");
+            System.out.println(" 8. Quit");
             String opt = sc.nextLine();
 
             switch (opt) {
@@ -30,11 +32,14 @@ public class BulkDB {
                     float price;
                     do {
 
-                        System.out.print("Insert brand: ");
+                        System.out.print("Insert brand ");
+                        System.out.print("(insert 0 to exit): ");
                         brand = sc.nextLine();
-                        System.out.print("Insert model: ");
+                        System.out.print("Insert model ");
+                        System.out.print("(insert 0 to exit): ");
                         model = sc.nextLine();
-                        System.out.print("Insert price: ");
+                        System.out.print("Insert price ");
+                        System.out.print("(insert 0 to exit): ");
                         price = Float.parseFloat(sc.nextLine());
 
                         if (!brand.equals("0") && !model.equals("0")) {
@@ -90,13 +95,16 @@ public class BulkDB {
                     }
                     break;
                 case "6":
-                    ProductDAO dao = new ProductDAO();
-                    dao.exportAllProducts();
+                    ProductDAO writeDao = new ProductDAO();
+                    writeDao.exportAllProducts();
                     break;
-
                 case "7":
+                    ProductDAO readDao = new ProductDAO();
+                    readDao.readDocument();
+                    break;
+                case "8":
                     start = false;
-                    System.out.println("Bye");
+                    System.out.println("Thanks for now. See you, bye");
                     break;
                 default:
                     System.out.println("Invalid option.");

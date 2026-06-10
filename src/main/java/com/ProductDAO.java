@@ -1,7 +1,6 @@
     package com;
 
-    import java.io.BufferedWriter;
-    import java.io.IOException;
+    import java.io.*;
     import java.nio.charset.StandardCharsets;
     import java.nio.file.Files;
     import java.nio.file.Path;
@@ -91,6 +90,18 @@
                     writer.newLine();
                 System.out.println("EXPORT COMPLETE");
 
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        public void readDocument()
+        {
+            String filePath = FILE_PATH.toString();
+            try( BufferedReader reader = new BufferedReader(new FileReader(filePath))){
+                String line;
+                while((line = reader.readLine()) != null){
+                    System.out.println(line);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
