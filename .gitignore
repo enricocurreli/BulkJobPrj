@@ -5,7 +5,7 @@ target/
 .kotlin
 src/main/resources/db.properties
 src/main/resources/.env
-src/main/report/*
+src/report/report.txt
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
